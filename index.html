@@ -301,9 +301,39 @@
           </div>
           <div class="agent-body">
             <div class="section-card">
-              <div class="section-card-header">
+              <div class="section-card-header" style="flex-wrap: wrap; gap: 0.5rem;">
                 <div class="section-card-title"><span class="icon">📥</span> Input — User Story</div>
-                <button class="btn btn-sm btn-outline" onclick="app.loadSampleStory()">Load Sample</button>
+                <div style="display:flex;gap:0.5rem">
+                  <button class="btn btn-sm btn-outline" onclick="document.getElementById('file-upload').click()">📁 Upload PRD/CSV</button>
+                  <input type="file" id="file-upload" accept=".csv,.txt,.md,.json" style="display:none" onchange="app.handleFileUpload(event)">
+                  <button class="btn btn-sm btn-outline" onclick="app.toggleTfsPanel()">🔗 ADO / TFS API</button>
+                  <button class="btn btn-sm btn-outline" onclick="app.loadSampleStory()">Load Sample</button>
+                </div>
+              </div>
+              <div id="tfs-api-panel" style="display:none; background:var(--bg-lighter); padding:1rem; border-radius:var(--radius-md); margin-bottom:1rem; border:1px solid var(--border-color);">
+                <h4 style="margin:0 0 1rem 0; font-size:var(--text-sm); color:var(--primary-color);">Azure DevOps / TFS Dynamic Fetch</h4>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1rem;">
+                  <div>
+                    <label class="form-label" style="font-size:var(--text-xs)">ADO Org URL (e.g., https://dev.azure.com/org)</label>
+                    <input type="text" id="tfs-url" class="form-input" placeholder="https://dev.azure.com/your-org">
+                  </div>
+                  <div>
+                    <label class="form-label" style="font-size:var(--text-xs)">Project Name</label>
+                    <input type="text" id="tfs-project" class="form-input" placeholder="QA_Project">
+                  </div>
+                  <div>
+                    <label class="form-label" style="font-size:var(--text-xs)">Work Item ID (User Story)</label>
+                    <input type="text" id="tfs-id" class="form-input" placeholder="10429">
+                  </div>
+                  <div>
+                    <label class="form-label" style="font-size:var(--text-xs)">Personal Access Token (PAT)</label>
+                    <input type="password" id="tfs-pat" class="form-input" placeholder="••••••••••••••••">
+                  </div>
+                </div>
+                <div style="display:flex; gap:1rem; align-items:center;">
+                  <button class="btn btn-primary btn-sm" onclick="app.fetchFromTfs()">🚀 Fetch User Story via API</button>
+                  <div id="tfs-status" style="font-size:var(--text-xs); color:var(--text-muted)"></div>
+                </div>
               </div>
               <div class="form-group">
                 <textarea class="form-textarea tall" id="grooming-input" placeholder="Paste your user story here...

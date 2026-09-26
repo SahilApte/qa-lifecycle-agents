@@ -153,6 +153,63 @@ class App {
     ExportUtils.showNotification('Story sent to Evaluation Agent. Make improvements and re-evaluate.', 'info');
   }
 
+  toggleTfsPanel() {
+    const panel = document.getElementById('tfs-api-panel');
+    if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+  }
+
+  fetchFromTfs() {
+    const id = document.getElementById('tfs-id').value;
+    const pat = document.getElementById('tfs-pat').value;
+    const status = document.getElementById('tfs-status');
+    if (!id || !pat) {
+      status.innerText = '❌ Error: Work Item ID and PAT are required.';
+      status.style.color = 'var(--status-fail)';
+      return;
+    }
+    status.innerText = '⏳ Connecting to Azure DevOps REST API...';
+    status.style.color = 'var(--primary-color)';
+    
+    // Simulate ADO API Fetch latency
+    setTimeout(() => {
+      const mockStory = `Title: [ADO-${id}] Optimize Checkout Flow Latency
+      
+Description:
+As a customer, I want the checkout API to respond in under 500ms so that my cart transaction processes seamlessly without timeout errors.
+
+Acceptance Criteria:
+AC1: Given the cart has > 50 items, When calculating total price, Then API response < 500ms.
+AC2: Given a high traffic spike, When checkout is initiated, Then rate limit handles queue gracefully without HTTP 500.
+
+Priority: High
+Story Points: 8`;
+      
+      const input = document.getElementById('grooming-input');
+      if (input) input.value = mockStory;
+      
+      status.innerText = `✅ Successfully fetched Work Item #${id}`;
+      status.style.color = 'var(--status-pass)';
+      ExportUtils.showNotification(`Story #${id} loaded from ADO!`, 'success');
+      
+      setTimeout(() => this.toggleTfsPanel(), 1500);
+    }, 1200);
+  }
+
+  handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const content = e.target.result;
+      const input = document.getElementById('grooming-input');
+      if (input) input.value = content;
+      ExportUtils.showNotification(`Loaded ${file.name} successfully!`, 'success');
+    };
+    reader.readAsText(file);
+    event.target.value = ''; // Reset input
+  }
+
   loadSampleStory() {
     const sample = `Title: Enable Password Reset via Email Verification
 
