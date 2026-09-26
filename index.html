@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-Powered QA Lifecycle Platform — 10 specialized agents automating testing from requirement grooming to production escape analysis.">
+  <title>QA Lifecycle Agents Platform</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+</head>
+<body>
+
+<div class="app-container">
+
+  <!-- ============================================================ -->
+  <!-- SIDEBAR                                                       -->
+  <!-- ============================================================ -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">QA</div>
+      <div class="sidebar-brand">
+        <span class="sidebar-brand-name">QA Lifecycle Agents</span>
+        <span class="sidebar-brand-sub">Testing Platform</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-item active" data-agent="dashboard">
+        <div class="nav-item-icon">🏠</div>
+        <span class="nav-item-label">Dashboard</span>
+      </div>
+
+      <div class="nav-section-label">Requirement Phase</div>
+      <div class="nav-item" data-agent="grooming">
+        <div class="nav-item-icon">🔍</div>
+        <span class="nav-item-label">Grooming Agent</span>
+        <span class="nav-item-badge ready">Ready</span>
+      </div>
+      <div class="nav-item" data-agent="evaluation">
+        <div class="nav-item-icon">✅</div>
+        <span class="nav-item-label">Evaluation Agent</span>
+        <span class="nav-item-badge ready">Ready</span>
+      </div>
+
+      <div class="nav-section-label">Test Design</div>
+      <div class="nav-item" data-agent="testcase-generator">
+        <div class="nav-item-icon">📝</div>
+        <span class="nav-item-label">TestCase Generator</span>
+        <span class="nav-item-badge ready">Ready</span>
+      </div>
+      <div class="nav-item" data-agent="testcase-uploader">
+        <div class="nav-item-icon">📤</div>
+        <span class="nav-item-label">TestCase Uploader</span>
+        <span class="nav-item-badge coming">TFS</span>
+      </div>
+
+      <div class="nav-section-label">Execution</div>
+      <div class="nav-item" data-agent="executor">
+        <div class="nav-item-icon">🎮</div>
+        <span class="nav-item-label">Executor Agent</span>
+        <span class="nav-item-badge coming">MCP</span>
+      </div>
+      <div class="nav-item" data-agent="suite-optimizer">
+        <div class="nav-item-icon">🔧</div>
+        <span class="nav-item-label">Suite Optimizer</span>
+        <span class="nav-item-badge ready">Ready</span>
+      </div>
+
+      <div class="nav-section-label">Automation</div>
+      <div class="nav-item" data-agent="script-writer">
+        <div class="nav-item-icon">💻</div>
+        <span class="nav-item-label">Script Writer</span>
+        <span class="nav-item-badge ready">Ready</span>
+      </div>
+      <div class="nav-item" data-agent="self-healer">
+        <div class="nav-item-icon">🧬</div>
+        <span class="nav-item-label">Self-Healer</span>
+        <span class="nav-item-badge coming">MCP</span>
+      </div>
+
+      <div class="nav-section-label">Analysis</div>
+      <div class="nav-item" data-agent="pme-analyzer">
+        <div class="nav-item-icon">🐛</div>
+        <span class="nav-item-label">PME Analyzer</span>
+        <span class="nav-item-badge ready">Ready</span>
+      </div>
+      <div class="nav-item" data-agent="report-analyzer">
+        <div class="nav-item-icon">📊</div>
+        <span class="nav-item-label">Report Analyzer</span>
+        <span class="nav-item-badge ready">Ready</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-dot"></div>
+      <span>All Systems Operational</span>
+    </div>
+  </aside>
+
+  <!-- ============================================================ -->
+  <!-- MAIN CONTENT                                                  -->
+  <!-- ============================================================ -->
+  <main class="main-content">
+    <div class="top-bar">
+      <span class="top-bar-title">🏠 Command Center</span>
+      <div class="top-bar-actions">
+        <span style="font-size:var(--text-xs);color:var(--text-muted)">v1.0.0</span>
+      </div>
+    </div>
+
+    <div class="content-area">
+
+      <!-- ======== DASHBOARD VIEW ======== -->
+      <section id="dashboard-view" class="agent-view active">
+        <div class="dashboard-hero">
+          <h1>QA Lifecycle Agents</h1>
+          <p>10 specialized AI agents automating your entire testing lifecycle — from requirements to production.</p>
+        </div>
+
+        <!-- Pipeline Visualization -->
+        <div class="pipeline-container">
+          <div class="pipeline-track">
+            <div class="pipeline-node" data-agent="grooming">
+              <div class="pipeline-node-circle">🔍</div>
+              <span class="pipeline-node-label">Groom</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="evaluation">
+              <div class="pipeline-node-circle">✅</div>
+              <span class="pipeline-node-label">Evaluate</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="testcase-generator">
+              <div class="pipeline-node-circle">📝</div>
+              <span class="pipeline-node-label">Generate</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="testcase-uploader">
+              <div class="pipeline-node-circle">📤</div>
+              <span class="pipeline-node-label">Upload</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="executor">
+              <div class="pipeline-node-circle">🎮</div>
+              <span class="pipeline-node-label">Execute</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="suite-optimizer">
+              <div class="pipeline-node-circle">🔧</div>
+              <span class="pipeline-node-label">Optimize</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="script-writer">
+              <div class="pipeline-node-circle">💻</div>
+              <span class="pipeline-node-label">Automate</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="self-healer">
+              <div class="pipeline-node-circle">🧬</div>
+              <span class="pipeline-node-label">Heal</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="pme-analyzer">
+              <div class="pipeline-node-circle">🐛</div>
+              <span class="pipeline-node-label">PME</span>
+            </div>
+            <div class="pipeline-connector"></div>
+            <div class="pipeline-node" data-agent="report-analyzer">
+              <div class="pipeline-node-circle">📊</div>
+              <span class="pipeline-node-label">Analyze</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent Cards Grid -->
+        <div class="agents-grid">
+
+          <div class="phase-label"><span>Phase 1 — Requirement Analysis</span></div>
+
+          <div class="agent-card" data-agent="grooming">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">🔍</div>
+              <div><div class="agent-card-title">Grooming Agent</div></div>
+              <span class="agent-card-number">#1</span>
+            </div>
+            <div class="agent-card-desc">Analyzes user stories for completeness — checks title, description, acceptance criteria, edge cases, and more. Scores out of 10 with detailed gap analysis.</div>
+            <div class="agent-card-status ready"><div class="dot"></div> Fully Operational</div>
+          </div>
+
+          <div class="agent-card" data-agent="evaluation">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">✅</div>
+              <div><div class="agent-card-title">Evaluation Agent</div></div>
+              <span class="agent-card-number">#2</span>
+            </div>
+            <div class="agent-card-desc">Validates the refined story is production-ready. Checks edge case coverage, testability, security, performance, and error handling considerations.</div>
+            <div class="agent-card-status ready"><div class="dot"></div> Fully Operational</div>
+          </div>
+
+          <div class="phase-label"><span>Phase 2 — Test Design</span></div>
+
+          <div class="agent-card" data-agent="testcase-generator">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">📝</div>
+              <div><div class="agent-card-title">TestCase Generator</div></div>
+              <span class="agent-card-number">#3</span>
+            </div>
+            <div class="agent-card-desc">Generates detailed test cases from login to logout — covering positive, negative, edge cases, UI/UX, and security scenarios with clear step-by-step instructions.</div>
+            <div class="agent-card-status ready"><div class="dot"></div> Fully Operational</div>
+          </div>
+
+          <div class="agent-card" data-agent="testcase-uploader">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">📤</div>
+              <div><div class="agent-card-title">TestCase Uploader</div></div>
+              <span class="agent-card-number">#4</span>
+            </div>
+            <div class="agent-card-desc">Uploads generated test cases to TFS/Azure DevOps Test Plans and links them as "Tested By" in the user story for full traceability.</div>
+            <div class="agent-card-status coming"><div class="dot"></div> Requires TFS API</div>
+          </div>
+
+          <div class="phase-label"><span>Phase 3 — Execution</span></div>
+
+          <div class="agent-card" data-agent="executor">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">🎮</div>
+              <div><div class="agent-card-title">Executor Agent</div></div>
+              <span class="agent-card-number">#5</span>
+            </div>
+            <div class="agent-card-desc">Uses Playwright MCP to navigate your application, execute test steps, and mark outcomes as Pass/Fail/Blocked. Checks dev PRs for blocked scenarios.</div>
+            <div class="agent-card-status coming"><div class="dot"></div> Requires Playwright MCP</div>
+          </div>
+
+          <div class="agent-card" data-agent="suite-optimizer">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">🔧</div>
+              <div><div class="agent-card-title">Suite Optimizer</div></div>
+              <span class="agent-card-number">#6</span>
+            </div>
+            <div class="agent-card-desc">Analyzes test plans to find duplicate scenarios, coverage gaps, and priority imbalances. Suggests additions and removals for an optimal test suite.</div>
+            <div class="agent-card-status ready"><div class="dot"></div> Fully Operational</div>
+          </div>
+
+          <div class="phase-label"><span>Phase 4 — Automation</span></div>
+
+          <div class="agent-card" data-agent="script-writer">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">💻</div>
+              <div><div class="agent-card-title">Script Writer</div></div>
+              <span class="agent-card-number">#7</span>
+            </div>
+            <div class="agent-card-desc">Generates Java Selenium code with Page Object Model, reusable methods, correct locators, TestNG, and proper coding standards — ready to run.</div>
+            <div class="agent-card-status ready"><div class="dot"></div> Fully Operational</div>
+          </div>
+
+          <div class="agent-card" data-agent="self-healer">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">🧬</div>
+              <div><div class="agent-card-title">Self-Healer</div></div>
+              <span class="agent-card-number">#8</span>
+            </div>
+            <div class="agent-card-desc">Automatically heals broken locators in automation scripts by navigating the live application and capturing real DOM elements via Playwright MCP.</div>
+            <div class="agent-card-status coming"><div class="dot"></div> Requires Playwright MCP</div>
+          </div>
+
+          <div class="phase-label"><span>Phase 5 — Analysis</span></div>
+
+          <div class="agent-card" data-agent="pme-analyzer">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">🐛</div>
+              <div><div class="agent-card-title">PME Analyzer</div></div>
+              <span class="agent-card-number">#9</span>
+            </div>
+            <div class="agent-card-desc">Analyzes production missed escapes — identifies root causes, test plan gaps, and suggests sanity/regression test cases to prevent recurrence.</div>
+            <div class="agent-card-status ready"><div class="dot"></div> Fully Operational</div>
+          </div>
+
+          <div class="agent-card" data-agent="report-analyzer">
+            <div class="agent-card-header">
+              <div class="agent-card-icon">📊</div>
+              <div><div class="agent-card-title">Report Analyzer</div></div>
+              <span class="agent-card-number">#10</span>
+            </div>
+            <div class="agent-card-desc">Reads automation execution reports, categorizes failures, identifies common patterns, and provides root cause analysis with actionable fix recommendations.</div>
+            <div class="agent-card-status ready"><div class="dot"></div> Fully Operational</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======== GROOMING AGENT VIEW ======== -->
+      <section id="grooming-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">🔍</div>
+            <div class="agent-panel-info">
+              <h2>Grooming Agent</h2>
+              <p>Analyzes user stories for completeness and quality. Scores out of 10.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body">
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📥</span> Input — User Story</div>
+                <button class="btn btn-sm btn-outline" onclick="app.loadSampleStory()">Load Sample</button>
+              </div>
+              <div class="form-group">
+                <textarea class="form-textarea tall" id="grooming-input" placeholder="Paste your user story here...
+
+Include:
+• Title
+• Description (As a... I want... So that...)
+• Acceptance Criteria (AC1, AC2, ... or Given/When/Then)
+• Priority, Story Points
+• Dependencies, Assumptions
+• Definition of Done
+• Technical Notes
+• Edge Cases"></textarea>
+              </div>
+              <button class="btn btn-primary btn-block btn-lg" id="grooming-btn" onclick="app.runGroomingAgent()">🔍 Analyze User Story</button>
+            </div>
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📊</span> Analysis Results</div>
+              </div>
+              <div id="grooming-output">
+                <div class="empty-state">
+                  <div class="empty-state-icon">📋</div>
+                  <div class="empty-state-text">Paste a user story and click "Analyze" to see the quality score and gap analysis.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== EVALUATION AGENT VIEW ======== -->
+      <section id="evaluation-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">✅</div>
+            <div class="agent-panel-info">
+              <h2>Evaluation Agent</h2>
+              <p>Validates story readiness for test case generation. Checks edge cases, testability, and security.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body">
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📥</span> Input — Refined User Story</div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-textarea tall" id="evaluation-input" placeholder="Paste your refined user story here (after addressing gaps from the Grooming Agent)..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-block btn-lg" id="evaluation-btn" onclick="app.runEvaluationAgent()">✅ Evaluate Readiness</button>
+            </div>
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📊</span> Evaluation Results</div>
+              </div>
+              <div id="evaluation-output">
+                <div class="empty-state">
+                  <div class="empty-state-icon">✅</div>
+                  <div class="empty-state-text">Paste a refined story and evaluate to check if it's ready for test case generation.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== TESTCASE GENERATOR VIEW ======== -->
+      <section id="testcase-generator-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">📝</div>
+            <div class="agent-panel-info">
+              <h2>TestCase Generator</h2>
+              <p>Generates detailed test cases from login to logout with edge cases and security tests.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body single-col">
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📥</span> Input — Evaluated User Story</div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-textarea" id="generator-input" placeholder="Paste the evaluated user story to generate comprehensive test cases..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-lg" id="generator-btn" onclick="app.runTestCaseGenerator()">📝 Generate Test Cases</button>
+            </div>
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📋</span> Generated Test Cases</div>
+              </div>
+              <div id="generator-output">
+                <div class="empty-state">
+                  <div class="empty-state-icon">📝</div>
+                  <div class="empty-state-text">Generated test cases will appear here — expandable cards with step-by-step instructions.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== TESTCASE UPLOADER VIEW ======== -->
+      <section id="testcase-uploader-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">📤</div>
+            <div class="agent-panel-info">
+              <h2>TestCase Uploader</h2>
+              <p>Upload test cases to TFS/Azure DevOps and link as "Tested By" in user stories.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body single-col" id="uploader-content">
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== EXECUTOR AGENT VIEW ======== -->
+      <section id="executor-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">🎮</div>
+            <div class="agent-panel-info">
+              <h2>Executor Agent</h2>
+              <p>Automated test execution via Playwright MCP — Pass/Fail/Blocked outcomes.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body single-col" id="executor-content">
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== SUITE OPTIMIZER VIEW ======== -->
+      <section id="suite-optimizer-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">🔧</div>
+            <div class="agent-panel-info">
+              <h2>Suite Optimizer</h2>
+              <p>Detects duplicates, identifies gaps, and optimizes your test suite for maximum coverage.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body single-col">
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📥</span> Input</div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-textarea code" id="optimizer-input" placeholder="Paste test cases as JSON array, or generate from Agent 3 first..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-lg" id="optimizer-btn" onclick="app.runSuiteOptimizer()">🔧 Optimize Test Suite</button>
+              <p style="font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-sm)">Tip: Generate test cases with Agent 3 first — they'll be automatically fed here.</p>
+            </div>
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📊</span> Optimization Results</div>
+              </div>
+              <div id="optimizer-output">
+                <div class="empty-state">
+                  <div class="empty-state-icon">🔧</div>
+                  <div class="empty-state-text">Run the optimizer to see duplicate detection, gap analysis, and coverage recommendations.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== SCRIPT WRITER VIEW ======== -->
+      <section id="script-writer-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">💻</div>
+            <div class="agent-panel-info">
+              <h2>Script Writer</h2>
+              <p>Generates Java Selenium code with POM, reusable methods, TestNG, and clean architecture.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body single-col">
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">⚙️</span> Generation</div>
+              </div>
+              <p style="font-size:var(--text-sm);color:var(--text-secondary);margin-bottom:var(--space-md)">
+                Generate test cases using Agent 3 first. The Script Writer will convert them into Java Selenium code following the Page Object Model pattern.
+              </p>
+              <button class="btn btn-primary btn-lg" id="script-btn" onclick="app.runScriptWriter()">💻 Generate Automation Scripts</button>
+            </div>
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📂</span> Generated Files</div>
+              </div>
+              <div id="script-output">
+                <div class="empty-state">
+                  <div class="empty-state-icon">💻</div>
+                  <div class="empty-state-text">Generated Java files will appear here — BasePage, LoginPage, feature pages, and test classes.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== SELF-HEALER VIEW ======== -->
+      <section id="self-healer-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">🧬</div>
+            <div class="agent-panel-info">
+              <h2>Self-Healer Agent</h2>
+              <p>Automatically fixes broken locators by inspecting the live application DOM.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body single-col" id="healer-content">
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== PME ANALYZER VIEW ======== -->
+      <section id="pme-analyzer-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">🐛</div>
+            <div class="agent-panel-info">
+              <h2>PME Analyzer</h2>
+              <p>Root cause analysis for production missed escapes. Identifies test plan gaps.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body">
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📋</span> Test Plan (Optional)</div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-textarea" id="pme-testplan" placeholder="Paste the test plan that was executed for the affected feature (optional but recommended)..."></textarea>
+              </div>
+              <div class="section-card-header mt-lg">
+                <div class="section-card-title"><span class="icon">🐛</span> PME Bug Details</div>
+                <button class="btn btn-sm btn-outline" onclick="app.loadSamplePME()">Load Sample</button>
+              </div>
+              <div class="form-group">
+                <textarea class="form-textarea" id="pme-bug" placeholder="Paste the production bug/story details — include description, steps to reproduce, severity, affected area, root cause..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-block btn-lg" id="pme-btn" onclick="app.runPMEAnalyzer()">🐛 Analyze PME</button>
+            </div>
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📊</span> PME Analysis</div>
+              </div>
+              <div id="pme-output">
+                <div class="empty-state">
+                  <div class="empty-state-icon">🐛</div>
+                  <div class="empty-state-text">Paste PME bug details and analyze to find root causes and test plan gaps.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======== REPORT ANALYZER VIEW ======== -->
+      <section id="report-analyzer-view" class="agent-view">
+        <div class="agent-panel">
+          <div class="agent-panel-header">
+            <div class="agent-panel-icon">📊</div>
+            <div class="agent-panel-info">
+              <h2>Report Analyzer</h2>
+              <p>Reads automation reports, categorizes failures, and identifies common patterns.</p>
+            </div>
+            <button class="agent-panel-back" onclick="app.navigateTo('dashboard')">← Back</button>
+          </div>
+          <div class="agent-body">
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📥</span> Automation Report</div>
+                <button class="btn btn-sm btn-outline" onclick="app.loadSampleReport()">Load Sample</button>
+              </div>
+              <div class="form-group">
+                <textarea class="form-textarea tall" id="report-input" placeholder="Paste your automation execution report here...
+
+Supported formats:
+• TestNG/JUnit console output
+• Allure/ExtentReports text summary
+• Custom report with PASS/FAIL markers
+• Error logs with stack traces"></textarea>
+              </div>
+              <button class="btn btn-primary btn-block btn-lg" id="report-btn" onclick="app.runReportAnalyzer()">📊 Analyze Report</button>
+            </div>
+            <div class="section-card">
+              <div class="section-card-header">
+                <div class="section-card-title"><span class="icon">📈</span> Analysis Results</div>
+              </div>
+              <div id="report-output">
+                <div class="empty-state">
+                  <div class="empty-state-icon">📊</div>
+                  <div class="empty-state-text">Paste an automation report and analyze to see failure categorization and root cause analysis.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- Notification Container -->
+<div class="notification-container"></div>
+
+<!-- Scripts -->
+<script src="js/utils/scoring-engine.js"></script>
+<script src="js/utils/export-utils.js"></script>
+<script src="js/agents/grooming-agent.js"></script>
+<script src="js/agents/evaluation-agent.js"></script>
+<script src="js/agents/testcase-generator.js"></script>
+<script src="js/agents/testcase-uploader.js"></script>
+<script src="js/agents/executor-agent.js"></script>
+<script src="js/agents/suite-optimizer.js"></script>
+<script src="js/agents/script-writer.js"></script>
+<script src="js/agents/self-healer.js"></script>
+<script src="js/agents/pme-analyzer.js"></script>
+<script src="js/agents/report-analyzer.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Initialize placeholder views after app loads -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const uploaderContent = document.getElementById('uploader-content');
+      if (uploaderContent && window.app) {
+        uploaderContent.innerHTML = app.testCaseUploader.renderConfig();
+      }
+      const executorContent = document.getElementById('executor-content');
+      if (executorContent && window.app) {
+        executorContent.innerHTML = app.executorAgent.renderView();
+      }
+      const healerContent = document.getElementById('healer-content');
+      if (healerContent && window.app) {
+        healerContent.innerHTML = app.selfHealer.renderView();
+      }
+    }, 200);
+  });
+</script>
+
+</body>
+</html>
