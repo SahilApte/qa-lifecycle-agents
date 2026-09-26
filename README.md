@@ -11,6 +11,18 @@ An enterprise-grade, browser-based multi-agent orchestration platform designed t
 
 ---
 
+## 🔒 Data Privacy & Zero-Tracking Guarantee
+
+> [!IMPORTANT]
+> **100% Client-Side Local Processing**
+>
+> All requirement parsing, user story analysis, TFS/Azure DevOps API parameter loading, and Java Selenium script generation are executed **entirely locally inside your browser** using deterministic NLP algorithms and client-side heuristics.
+>
+> - **Zero External Telemetry:** No user stories, PRDs, API tokens, test credentials, or parameters are stored, tracked, or sent to third-party databases or cloud LLM servers.
+> - **Enterprise Security Safe:** Enterprise teams can safely load internal proprietary specifications, confidential acceptance criteria, and corporate TFS/ADO payload configurations without data leak risks.
+
+---
+
 ## 🌟 The 10 Specialized QA Agents
 
 ```mermaid
